@@ -5,11 +5,11 @@ It helps farmers plan crops, estimate yields, check water needs, and calculate r
 
 
 📂 Project Structure
-farm-yield-planner/
-│── index.html # Structured HTML content
-│── style.css # Styling for the app (optional)
-│── script.js # JavaScript with variables, functions, loops, DOM interactions
-│── README.md # Project documentation
+farm-yield-planner :
+index.html # Structured HTML content,
+ style.css # Styling for the app,
+ script.js # JavaScript with variables, functions, loops, DOM interactions,
+ README.md # Project documentation
 
 
 🚀 Features
