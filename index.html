@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm Yield Planner 🌾</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Farm Yield Planner 🌾</h1>
+        <p class="tagline">Plan crops, estimate yield, water needs, and budget.</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Add Crop</h2>
+            <form id="addCropForm">
+                <div class="row">
+                    <label>Crop Name</label>
+                    <input type="text" id="cropName" placeholder="e.g., Maize" required />
+                </div>
+                <div class="row">
+                    <label>Area (acres)</label>
+                    <input type="number" id="area" step="0.1" min="0" value="1" required />
+                </div>
+                <div class="row">
+                    <label>Expected Yield (tons/acre)</label>
+                    <input type="number" id="yieldPerAcre" step="0.1" min="0" value="3" required />
+                </div>
+                <div class="row">
+                    <label>Price (per ton)</label>
+                    <input type="number" id="pricePerTon" step="0.01" min="0" value="200" required />
+                </div>
+                <div class="row">
+                    <label>Water Need (mm/week)</label>
+                    <input type="number" id="waterNeed" step="1" min="0" value="35" required />
+                </div>
+                <button type="submit">Add to Plan</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Season Settings</h2>
+            <div class="row">
+                <label>Season</label>
+                <select id="season">
+                    <option>Long Rains</option>
+                    <option>Short Rains</option>
+                    <option>Dry Season</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>Forecast Rainfall (mm/week)</label>
+                <input type="number" id="rainfall" step="1" min="0" value="20" />
+            </div>
+            <button id="recompute">Recompute Stats</button>
+            <p class="status" id="waterStatus">Water status: —</p>
+        </section>
+
+        <section class="panel">
+            <h2>Crop Plan</h2>
+            <ul id="cropList" class="list"></ul>
+        </section>
+
+        <section class="panel totals">
+            <h2>Totals</h2>
+            <p><strong>Total Expected Yield:</strong> <span id="totalYield">0</span> tons</p>
+            <p><strong>Estimated Revenue:</strong> $<span id="totalRevenue">0.00</span></p>
+            <p><strong>Total Weekly Water Need:</strong> <span id="totalWater">0</span> mm</p>
+        </section>
+    </main>
+
+    <footer>
+        <small>@chegeemmanuel01@gmail.com.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
